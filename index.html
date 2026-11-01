@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101a2b">
+  <title>Ночная доставка — платформер</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">✦</span><div><p class="eyebrow">КАМПУС • 23:48</p><h1>Ночная доставка</h1></div></div>
+      <div class="stats" aria-live="polite">
+        <div class="stat"><span class="stat-icon">↗</span><span><small>УРОВЕНЬ</small><b id="level">1</b></span></div>
+        <div class="stat"><span class="stat-icon">✉</span><span><small>ПОСЫЛКИ</small><b id="score">0 / 3</b></span></div>
+        <div class="stat"><span class="stat-icon">★</span><span><small>ЛУЧШИЙ УРОВЕНЬ</small><b id="best">0</b></span></div>
+      </div>
+    </header>
+
+    <section class="game-card" aria-label="Игровое поле">
+      <div class="canvas-wrap">
+        <canvas id="game" width="960" height="540" aria-label="Игра Ночная доставка"></canvas>
+        <div class="message" id="message" role="status">
+          <div class="message-icon" id="messageIcon">✦</div>
+          <p class="message-kicker" id="messageKicker">ЗАДАНИЕ ПРИНЯТО</p>
+          <h2 id="messageTitle">Доставь все посылки</h2>
+          <p id="messageText">Собери три письма, перепрыгни опасный участок и доберись до корпуса.</p>
+          <button class="primary" id="startBtn">Начать игру <span>→</span></button>
+        </div>
+        <div class="hud-pill" id="hudPill"><span class="live-dot"></span> ДОСТАВКА В ПУТИ</div>
+      </div>
+      <div class="controls-row">
+        <div class="buttons">
+          <button class="control-button" id="pauseBtn" disabled>Ⅱ <span>Пауза</span></button>
+          <button class="control-button" id="restartBtn">↻ <span>Повторить</span></button>
+        <button class="control-button" id="newRunBtn">Новая игра</button></div>
+        <p class="hint"><kbd>←</kbd> <kbd>→</kbd> или <kbd>A</kbd> <kbd>D</kbd> — движение <i>·</i> <kbd>Space</kbd>/<kbd>W</kbd> — прыжок</p>
+      </div>
+    </section>
+    <footer class="footer"><span>Курьерская служба кампуса</span><span><span id="progressText">Доставлено за игру: 0</span></span></footer>
+  </main>
+
+  <nav class="touch-controls" aria-label="Сенсорное управление">
+    <div class="touch-move">
+      <button class="touch-button" data-input="left" aria-label="Влево">←</button>
+      <button class="touch-button" data-input="right" aria-label="Вправо">→</button>
+    </div>
+    <button class="touch-button jump-button" data-input="jump" aria-label="Прыжок">↑</button>
+  </nav>
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
